@@ -1,4 +1,35 @@
 @charset "ISO-8859-1";
+body{
+    overflow-x: hidden;
+}
+.bg {
+    pointer-events: none;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+}
+@keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+}
 .logo-container{
     display: block;
     margin-left: auto;
@@ -8,25 +39,44 @@
 .logo-container img{
     width: 250px;
 }
-.logo-container p{
-    display: block;
+.neon {
     text-align: center;
-    color: #ff00ea;
     font-size: 72px;
-    margin: 0;
     text-transform: uppercase;
-    text-shadow: 0 0 3px #ff64f2, 0 0 5px #707070;
+    color: #ff00ea;
+    line-height: 9vw;
+    text-shadow: 0 0 2vw #c001b0;
+}
+.neon {
+    animation: neon 1s ease infinite;
+    -moz-animation: neon 1s ease infinite;
+    -webkit-animation: neon 1s ease infinite;
+}
+@keyframes neon {
+    0%,
+    100% {
+        text-shadow: 0 0 .25vw #ff00ea, 0 0 .75vw #ff00ea, 0 0 2.5vw #ff00ea, 0 0 2.5vw #ff00ea, 0 0 .1vw #ff0090;
+        color: #ff0090;
+    }
+    50% {
+        text-shadow: 0 0 .1vw #ff0090, 0 0 0.38vw #ff0090, 0 0 1.25vw #ff0090, 0 0 1.25vw #ff0090, 0 0 .05vw #ff0090;
+        color: #ff00ea;
+    }
 }
 .topnav{
-    background: #131313;
     margin: 0;
-    padding: 25px 0px 25px 0px;
+    padding: 25px 5px 25px 5px;
+    display: block;
+    width: 100%;
+    background: #121212;
+    text-align: center;
+}
+.navMenu{
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    display: block;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
 }
 .navMenu a {
     color: #f6f4e6;
